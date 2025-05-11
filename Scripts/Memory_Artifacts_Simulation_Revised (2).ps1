@@ -1,0 +1,7 @@
+$client = New-Object System.Net.Sockets.TCPClient("127.0.0.1",4444)
+$stream = $client.GetStream()
+$writer = New-Object System.IO.StreamWriter($stream)
+$writer.WriteLine("Simulated C2 traffic")
+$writer.Flush()
+$writer.Close()
+$client.Close()
